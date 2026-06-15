@@ -277,6 +277,11 @@
       white-space: nowrap;
     }
 
+
+    .free-limit-pill {
+      gap: 0;
+    }
+
     .pill-icon {
       width: 14px;
       height: 14px;
@@ -1520,6 +1525,495 @@
       justify-content: center;
     }
 
+
+    /* V7 — collapsed banner becomes a true one-line compact bar */
+    .pro-awareness-banner.is-collapsed {
+      min-height: 56px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas: "copy pro";
+      gap: 16px;
+      align-items: center;
+      padding: 9px 48px 9px 16px;
+      border-radius: 14px;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-copy {
+      grid-area: copy;
+      min-width: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      overflow: hidden;
+      padding-right: 0;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-heading {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      flex: none;
+      min-width: 0;
+      order: 0;
+      padding-right: 0;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .pro-awareness-banner.is-collapsed .title-eye-icon {
+      width: 17px;
+      height: 17px;
+      transform: none;
+    }
+
+    .pro-awareness-banner.is-collapsed .free-limit-pill {
+      display: inline-flex;
+      height: 24px;
+      padding: 0 9px;
+      font-size: 10.5px;
+      flex: none;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-full,
+    .pro-awareness-banner.is-collapsed .pro-benefits,
+    .pro-awareness-banner.is-collapsed .view-plans-btn {
+      display: none !important;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+      display: block;
+      max-width: none;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--grey-600);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      order: 1;
+    }
+
+    .pro-awareness-banner.is-collapsed .pro-cta {
+      grid-area: pro;
+      width: auto;
+      height: 36px;
+      min-width: 96px;
+      padding: 0 13px;
+      font-size: 13px;
+    }
+
+    .pro-awareness-banner.is-collapsed .pro-cta svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .pro-awareness-banner.is-collapsed .close-btn {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%) rotate(45deg);
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: "copy pro";
+        padding: 9px 44px 9px 12px;
+        gap: 10px;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-copy {
+        flex-direction: row;
+        align-items: center;
+        gap: 9px;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-heading {
+        gap: 8px;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-title span {
+        max-width: 168px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+        display: none;
+      }
+
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        width: auto;
+        height: 34px;
+        min-width: 88px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pro-awareness-banner.is-collapsed {
+        min-height: 52px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: "copy pro";
+        padding: 9px 40px 9px 12px;
+      }
+
+      .pro-awareness-banner.is-collapsed .free-limit-pill {
+        display: none;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-title span {
+        max-width: 128px;
+      }
+
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        height: 34px;
+        min-width: 84px;
+        padding: 0 11px;
+      }
+    }
+
+
+    /* V8 — plan status moved into the action cluster */
+    .plan-status-pill {
+      height: 38px;
+      padding: 0 13px;
+      font-size: 12px;
+      font-weight: 750;
+      background: var(--yellow-soft);
+      border-color: var(--yellow-border);
+      color: #8A5B00;
+      justify-content: center;
+    }
+
+    .pro-awareness-banner {
+      grid-template-columns: minmax(360px, 1fr) auto auto auto;
+      align-items: center;
+    }
+
+    .pro-awareness-banner.is-collapsed {
+      min-height: 56px;
+      grid-template-columns: minmax(0, 1fr) auto auto auto;
+      grid-template-areas: "copy status plans pro";
+      gap: 10px;
+      padding: 9px 48px 9px 16px;
+    }
+
+    .pro-awareness-banner.is-collapsed .plan-status-pill {
+      grid-area: status;
+      display: inline-flex;
+      height: 36px;
+      padding: 0 12px;
+    }
+
+    .pro-awareness-banner.is-collapsed .view-plans-btn {
+      grid-area: plans;
+      display: inline-flex !important;
+      height: 36px;
+      padding: 0 14px;
+    }
+
+    .pro-awareness-banner.is-collapsed .pro-cta {
+      grid-area: pro;
+      height: 36px;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-heading {
+      flex: none;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .pro-awareness-banner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+          "copy copy"
+          "benefits benefits"
+          "status status"
+          "plans pro";
+      }
+
+      .plan-status-pill {
+        grid-area: status;
+        width: 100%;
+      }
+
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        grid-template-areas:
+          "copy copy copy"
+          "status plans pro";
+        gap: 9px;
+      }
+
+      .pro-awareness-banner.is-collapsed .plan-status-pill,
+      .pro-awareness-banner.is-collapsed .view-plans-btn,
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        height: 34px;
+        font-size: 12.5px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pro-awareness-banner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "benefits"
+          "status"
+          "pro"
+          "plans";
+      }
+
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "status"
+          "pro"
+          "plans";
+        padding: 12px 40px 12px 12px;
+      }
+
+      .pro-awareness-banner.is-collapsed .plan-status-pill,
+      .pro-awareness-banner.is-collapsed .view-plans-btn,
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        width: 100%;
+      }
+    }
+
+
+    /* V9 — collapsed bar: status + benefits + CTAs, full collapsed area reopens */
+    .pro-awareness-banner.is-collapsed {
+      grid-template-columns: auto minmax(0, 1fr) auto auto;
+      grid-template-areas: "status copy plans pro";
+      cursor: pointer;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-copy {
+      grid-area: copy;
+      display: flex;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-heading {
+      display: none !important;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+      display: block !important;
+      min-width: 0;
+      max-width: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--grey-600);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 650;
+    }
+
+    .pro-awareness-banner.is-collapsed .plan-status-pill,
+    .pro-awareness-banner.is-collapsed .view-plans-btn,
+    .pro-awareness-banner.is-collapsed .pro-cta,
+    .pro-awareness-banner.is-collapsed .close-btn {
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "status status"
+          "copy copy"
+          "plans pro";
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+        text-align: left;
+        line-height: 1.25;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "status"
+          "copy"
+          "pro"
+          "plans";
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+        white-space: normal;
+      }
+    }
+
+
+    /* V10 — requested collapsed hierarchy + diamond title icon */
+    .title-diamond-icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      color: var(--blue);
+      flex: none;
+      transform: translateY(-1px);
+    }
+
+    .pro-awareness-banner.is-collapsed {
+      min-height: 62px;
+      grid-template-columns: minmax(260px, 1fr) auto auto auto;
+      grid-template-areas: "copy status plans pro";
+      gap: 10px;
+      align-items: center;
+      padding: 10px 48px 10px 16px;
+      cursor: pointer;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-copy {
+      grid-area: copy;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      overflow: hidden;
+      padding-right: 8px;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-heading {
+      display: flex !important;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      padding-right: 0;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      font-size: 14px;
+      line-height: 1.05;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-title span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pro-awareness-banner.is-collapsed .title-diamond-icon {
+      width: 17px;
+      height: 17px;
+      transform: translateY(-1px);
+    }
+
+    .pro-awareness-banner.is-collapsed .title-eye-icon {
+      display: none !important;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-full,
+    .pro-awareness-banner.is-collapsed .pro-benefits {
+      display: none !important;
+    }
+
+    .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+      display: block !important;
+      min-width: 0;
+      max-width: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--grey-600);
+      font-size: 12.5px;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .pro-awareness-banner.is-collapsed .plan-status-pill {
+      grid-area: status;
+      display: inline-flex;
+      height: 36px;
+      padding: 0 12px;
+      white-space: nowrap;
+    }
+
+    .pro-awareness-banner.is-collapsed .view-plans-btn {
+      grid-area: plans;
+      display: inline-flex !important;
+      height: 36px;
+      padding: 0 14px;
+    }
+
+    .pro-awareness-banner.is-collapsed .pro-cta {
+      grid-area: pro;
+      height: 36px;
+      min-width: 96px;
+      padding: 0 13px;
+    }
+
+    @media (max-width: 900px) {
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "copy copy"
+          "status status"
+          "plans pro";
+        padding: 12px 44px 12px 12px;
+        gap: 9px;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-copy {
+        padding-right: 0;
+      }
+
+      .pro-awareness-banner.is-collapsed .plan-status-pill,
+      .pro-awareness-banner.is-collapsed .view-plans-btn,
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        width: 100%;
+        height: 34px;
+        font-size: 12.5px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pro-awareness-banner.is-collapsed {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "status"
+          "pro"
+          "plans";
+        padding: 12px 40px 12px 12px;
+      }
+
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
+        white-space: normal;
+        line-height: 1.25;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1591,19 +2085,13 @@
 
         <div class="banner-copy">
           <div class="banner-heading">
-            <div class="banner-title"><svg class="title-eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1.32341 11.4467C2.81066 6.97571 7.02791 3.75 12.0005 3.75C16.9708 3.75 21.1864 6.97271 22.6755 11.4405C22.7959 11.8015 22.796 12.1922 22.6759 12.5533C21.1886 17.0243 16.9714 20.25 11.9988 20.25C7.02847 20.25 2.81284 17.0273 1.32374 12.5595C1.2034 12.1985 1.20328 11.8078 1.32341 11.4467ZM17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.1005 17.25 6.75 14.8995 6.75 12C6.75 9.1005 9.1005 6.75 12 6.75C14.8995 6.75 17.25 9.1005 17.25 12Z" fill="currentColor"/></svg><span>Unlock more with Bridge Pro</span></div>
-            <span class="pill free-limit-pill">
-              <span class="pill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5"/></svg>
-              </span>
-              You're currently on Free
-            </span>
+            <div class="banner-title"><svg class="title-diamond-icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip-pro-diamond-blue-title)"><path d="M5.26953 1.36719L6.35156 3.74805L8.18555 4.58203H15.7246L15.8096 4.58691C16.005 4.61152 16.1821 4.72048 16.293 4.88672L19.0273 8.98828C19.197 9.24307 19.1768 9.58007 18.9775 9.8125L10.7744 19.3828C10.6425 19.5365 10.4486 19.6238 10.2461 19.6211C10.0434 19.6181 9.85124 19.5256 9.72363 19.3682L1.97656 9.79785C1.80124 9.58124 1.77502 9.27883 1.91016 9.03516L3.0498 6.98438L3.19824 6.71484L0.945312 5.69141L0 5.26172L0.945312 4.83203L3.32715 3.74902L4.41016 1.36719L4.83984 0.421875L5.26953 1.36719ZM8.93555 9.35742L7.48242 10.0176L8.93555 10.6787L9.59668 12.1318L10.2568 10.6787L11.7109 10.0176L10.2568 9.35742L9.59668 7.9043L8.93555 9.35742ZM4.11426 4.30176L4.04102 4.46289L3.87988 4.53613L2.28125 5.26172L3.87988 5.98828L4.04102 6.06152L4.11426 6.22266L4.83984 7.82031L5.56641 6.22266L5.63965 6.06152L5.80078 5.98828L7.39844 5.26172L5.80078 4.53613L5.63965 4.46289L5.56641 4.30176L4.83984 2.70312L4.11426 4.30176Z" fill="currentColor"/></g><defs><clipPath id="clip-pro-diamond-blue-title"><rect width="19.142" height="19.1993" fill="white" transform="translate(0 0.421875)"/></clipPath></defs></svg><span>Unlock more with Bridge Pro</span></div>
           </div>
           <div class="banner-text banner-text-full">
             Get more storage, more seats, advanced tools, and make your music available to supervisors and buyers.
           </div>
           <div class="banner-text banner-text-collapsed">
-            Get more storage, more seats, advanced tools, and make your music available to supervisors and buyers.
+            Storage, seats, advanced tools & buyer exposure.
           </div>
 
           <div class="pro-benefits" aria-label="Pro benefits">
@@ -1666,7 +2154,8 @@
           </div>
         </div>
 
-        <a class="view-plans-btn" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">View plans</a>
+        <span class="pill plan-status-pill">Current Plan: Free</span>
+        <a class="view-plans-btn" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">View Plans</a>
         <a class="pro-cta" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip-pro-diamond-white-cta)"><path d="M5.26953 1.36719L6.35156 3.74805L8.18555 4.58203H15.7246L15.8096 4.58691C16.005 4.61152 16.1821 4.72048 16.293 4.88672L19.0273 8.98828C19.197 9.24307 19.1768 9.58007 18.9775 9.8125L10.7744 19.3828C10.6425 19.5365 10.4486 19.6238 10.2461 19.6211C10.0434 19.6181 9.85124 19.5256 9.72363 19.3682L1.97656 9.79785C1.80124 9.58124 1.77502 9.27883 1.91016 9.03516L3.0498 6.98438L3.19824 6.71484L0.945312 5.69141L0 5.26172L0.945312 4.83203L3.32715 3.74902L4.41016 1.36719L4.83984 0.421875L5.26953 1.36719ZM8.93555 9.35742L7.48242 10.0176L8.93555 10.6787L9.59668 12.1318L10.2568 10.6787L11.7109 10.0176L10.2568 9.35742L9.59668 7.9043L8.93555 9.35742ZM4.11426 4.30176L4.04102 4.46289L3.87988 4.53613L2.28125 5.26172L3.87988 5.98828L4.04102 6.06152L4.11426 6.22266L4.83984 7.82031L5.56641 6.22266L5.63965 6.06152L5.80078 5.98828L7.39844 5.26172L5.80078 4.53613L5.63965 4.46289L5.56641 4.30176L4.83984 2.70312L4.11426 4.30176Z" fill="white"/></g><defs><clipPath id="clip-pro-diamond-white-cta"><rect width="19.142" height="19.1993" fill="white" transform="translate(0 0.421875)"/></clipPath></defs></svg>
           Turn Pro
@@ -1707,15 +2196,29 @@
 
   <script>
     const proAwarenessBanner = document.getElementById('proAwarenessBanner');
-    const reduceTurn ProBannerButton = proAwarenessBanner?.querySelector('.close-btn');
+    const reduceProBannerButton = proAwarenessBanner?.querySelector('.close-btn');
 
-    reduceTurn ProBannerButton?.addEventListener('click', () => {
-      const isCollapsed = proAwarenessBanner.classList.toggle('is-collapsed');
-      reduceTurn ProBannerButton.setAttribute('aria-expanded', String(!isCollapsed));
-      reduceTurn ProBannerButton.setAttribute(
+    const setProBannerCollapsed = (shouldCollapse) => {
+      proAwarenessBanner.classList.toggle('is-collapsed', shouldCollapse);
+      reduceProBannerButton.setAttribute('aria-expanded', String(!shouldCollapse));
+      reduceProBannerButton.setAttribute(
         'aria-label',
-        isCollapsed ? 'Expand pro banner' : 'Reduce pro banner'
+        shouldCollapse ? 'Expand pro banner' : 'Reduce pro banner'
       );
+    };
+
+    reduceProBannerButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setProBannerCollapsed(!proAwarenessBanner.classList.contains('is-collapsed'));
+    });
+
+    proAwarenessBanner?.addEventListener('click', (event) => {
+      const clickedInteractiveElement = event.target.closest('a, button');
+
+      if (clickedInteractiveElement) return;
+      if (!proAwarenessBanner.classList.contains('is-collapsed')) return;
+
+      setProBannerCollapsed(false);
     });
   </script>
 </body>
