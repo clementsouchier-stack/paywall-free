@@ -1874,6 +1874,10 @@
       transform: translateY(-1px);
     }
 
+    .pro-awareness-banner.is-dismissed {
+      display: none !important;
+    }
+
     .pro-awareness-banner.is-collapsed {
       min-height: 62px;
       grid-template-columns: minmax(260px, 1fr) auto auto auto;
@@ -1926,7 +1930,7 @@
     .pro-awareness-banner.is-collapsed .title-diamond-icon {
       width: 17px;
       height: 17px;
-      transform: translateY(-1px);
+      transform: none;
     }
 
     .pro-awareness-banner.is-collapsed .title-eye-icon {
@@ -2160,7 +2164,7 @@
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip-pro-diamond-white-cta)"><path d="M5.26953 1.36719L6.35156 3.74805L8.18555 4.58203H15.7246L15.8096 4.58691C16.005 4.61152 16.1821 4.72048 16.293 4.88672L19.0273 8.98828C19.197 9.24307 19.1768 9.58007 18.9775 9.8125L10.7744 19.3828C10.6425 19.5365 10.4486 19.6238 10.2461 19.6211C10.0434 19.6181 9.85124 19.5256 9.72363 19.3682L1.97656 9.79785C1.80124 9.58124 1.77502 9.27883 1.91016 9.03516L3.0498 6.98438L3.19824 6.71484L0.945312 5.69141L0 5.26172L0.945312 4.83203L3.32715 3.74902L4.41016 1.36719L4.83984 0.421875L5.26953 1.36719ZM8.93555 9.35742L7.48242 10.0176L8.93555 10.6787L9.59668 12.1318L10.2568 10.6787L11.7109 10.0176L10.2568 9.35742L9.59668 7.9043L8.93555 9.35742ZM4.11426 4.30176L4.04102 4.46289L3.87988 4.53613L2.28125 5.26172L3.87988 5.98828L4.04102 6.06152L4.11426 6.22266L4.83984 7.82031L5.56641 6.22266L5.63965 6.06152L5.80078 5.98828L7.39844 5.26172L5.80078 4.53613L5.63965 4.46289L5.56641 4.30176L4.83984 2.70312L4.11426 4.30176Z" fill="white"/></g><defs><clipPath id="clip-pro-diamond-white-cta"><rect width="19.142" height="19.1993" fill="white" transform="translate(0 0.421875)"/></clipPath></defs></svg>
           Turn Pro
         </a>
-        <button class="close-btn" type="button" aria-label="Reduce pro banner" aria-expanded="true" aria-controls="proAwarenessBanner">
+        <button class="close-btn" type="button" aria-label="Close pro banner" aria-controls="proAwarenessBanner">
           <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </section>
@@ -2196,29 +2200,17 @@
 
   <script>
     const proAwarenessBanner = document.getElementById('proAwarenessBanner');
-    const reduceProBannerButton = proAwarenessBanner?.querySelector('.close-btn');
+    const closeProBannerButton = proAwarenessBanner?.querySelector('.close-btn');
+    const proBannerDismissedKey = 'bridgeProBannerDismissedThisSession';
 
-    const setProBannerCollapsed = (shouldCollapse) => {
-      proAwarenessBanner.classList.toggle('is-collapsed', shouldCollapse);
-      reduceProBannerButton.setAttribute('aria-expanded', String(!shouldCollapse));
-      reduceProBannerButton.setAttribute(
-        'aria-label',
-        shouldCollapse ? 'Expand pro banner' : 'Reduce pro banner'
-      );
-    };
+    if (sessionStorage.getItem(proBannerDismissedKey) === 'true') {
+      proAwarenessBanner?.classList.add('is-dismissed');
+    }
 
-    reduceProBannerButton?.addEventListener('click', (event) => {
+    closeProBannerButton?.addEventListener('click', (event) => {
       event.stopPropagation();
-      setProBannerCollapsed(!proAwarenessBanner.classList.contains('is-collapsed'));
-    });
-
-    proAwarenessBanner?.addEventListener('click', (event) => {
-      const clickedInteractiveElement = event.target.closest('a, button');
-
-      if (clickedInteractiveElement) return;
-      if (!proAwarenessBanner.classList.contains('is-collapsed')) return;
-
-      setProBannerCollapsed(false);
+      sessionStorage.setItem(proBannerDismissedKey, 'true');
+      proAwarenessBanner?.classList.add('is-dismissed');
     });
   </script>
 </body>
