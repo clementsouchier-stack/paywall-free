@@ -20,7 +20,7 @@
       --grey-600: #5B5A61;
       --sidebar: #F7F7F8;
       --radius-xl: 28px;
-      --shadow-soft: 0 18px 50px rgba(37, 36, 40, 0.07);
+      --shadow-soft: none;
     }
 
     * { box-sizing: border-box; }
@@ -73,7 +73,7 @@
       overflow: visible;
     }
 
-    .workspace-switcher:hover .workspace-avatar { transform: translateY(-1px); opacity: 0.96; }
+    .workspace-switcher:hover .workspace-avatar { transform: none; opacity: 0.96; }
 
     .sidebar-scroll {
       min-height: 0;
@@ -92,7 +92,7 @@
       border-radius: 999px;
       background: #fff;
       border: 1px solid #CFCFD6;
-      box-shadow: 0 8px 20px rgba(37, 36, 40, 0.14);
+      box-shadow: none;
       color: var(--black);
       display: grid;
       place-items: center;
@@ -179,7 +179,7 @@
       color: #fff;
       font-size: 13px;
       font-weight: 700;
-      box-shadow: 0 8px 18px rgba(52, 68, 212, 0.24);
+      box-shadow: none;
     }
 
     .pro-mini > svg { width: 16px; height: 16px; display: block; flex: none; }
@@ -211,7 +211,7 @@
       border-radius: 18px;
       border: 1px solid rgba(52, 68, 212, 0.18);
       background: #FFFFFF;
-      box-shadow: 0 14px 38px rgba(37, 36, 40, 0.06);
+      box-shadow: none;
       display: grid;
       grid-template-columns: auto minmax(420px, 1fr) auto auto;
       align-items: center;
@@ -235,7 +235,7 @@
       display: grid;
       place-items: center;
       flex: none;
-      box-shadow: 0 10px 24px rgba(52, 68, 212, 0.08), inset 0 1px 0 rgba(255,255,255,0.72);
+      box-shadow: none;
     }
 
     .pro-emblem > svg { width: 22px; height: 22px; display: block; }
@@ -330,23 +330,19 @@
       gap: 7px;
       font-size: 12px;
       font-weight: 650;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 18px rgba(52,68,212,0.05);
+      box-shadow: none;
       transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
       white-space: nowrap;
     }
 
     .benefit-chip:hover {
-      transform: translateY(-2px);
+      transform: none;
       border-color: rgba(52,68,212,0.18);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 14px 32px rgba(52,68,212,0.10);
+      box-shadow: none;
     }
 
     .benefit-chip::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 60%);
-      pointer-events: none;
+      display: none;
     }
 
     .benefit-chip strong {
@@ -390,7 +386,7 @@
       color: #fff;
       font-size: 13px;
       font-weight: 700;
-      box-shadow: 0 10px 22px rgba(52, 68, 212, 0.25);
+      box-shadow: none;
       white-space: nowrap;
       flex: none;
       display: inline-flex;
@@ -500,7 +496,7 @@
       border-radius: var(--radius-xl);
       min-height: calc(100vh - 162px);
       padding: 0 30px 0;
-      box-shadow: var(--shadow-soft);
+      box-shadow: none;
       position: relative;
       overflow: hidden;
     }
@@ -573,7 +569,7 @@
       stroke-linejoin: round;
     }
 
-    .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #1d1d20, #999); overflow: hidden; margin-left: 4px; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--grey-200); overflow: hidden; margin-left: 4px; }
     .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .hero { height: 255px; border-radius: 15px; overflow: hidden; background: #08090a; position: relative; }
@@ -595,7 +591,7 @@
     .check { width: 17px; height: 17px; border-radius: 3px; border: 2px solid #D0D0D5; display: inline-block; }
     .track-cell { display: flex; align-items: center; gap: 12px; }
     .track-index { width: 22px; text-align: right; color: #29292f; }
-    .cover { width: 48px; height: 48px; border-radius: 2px; background: linear-gradient(135deg, #111, #5b5b64); overflow: hidden; flex: none; }
+    .cover { width: 48px; height: 48px; border-radius: 2px; background: var(--grey-200); overflow: hidden; flex: none; }
     .cover img { width: 100%; height: 100%; object-fit: cover; }
     .track-title { font-weight: 760; letter-spacing: -0.01em; }
     .track-sub, .update-sub { color: var(--grey-500); margin-top: 3px; }
@@ -608,7 +604,7 @@
       height: 72px;
       border-radius: 50%;
       background: #DEE2FF;
-      box-shadow: 0 10px 30px rgba(37, 36, 40, 0.18);
+      box-shadow: none;
       display: grid;
       place-items: center;
       color: #414866;
@@ -1097,7 +1093,7 @@
     .benefit-chip-primary {
       border-color: rgba(52, 68, 212, 0.30);
       background: #EEF1FF;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 10px 26px rgba(52,68,212,0.12);
+      box-shadow: none;
     }
 
     .benefit-chip-primary .benefit-icon {
@@ -1454,6 +1450,69 @@
       }
     }
 
+
+    /* Design-system cleanup — flat surfaces, no decorative gradients or shadows */
+    .upgrade-banner,
+    .pro-emblem,
+    .benefit-chip,
+    .benefit-chip-primary,
+    .upgrade-btn,
+    .view-plans-btn,
+    .add-btn,
+    .pro-mini,
+    .workspace,
+    .chat {
+      box-shadow: none;
+    }
+
+    .upgrade-banner {
+      border-color: var(--grey-200);
+      background: #fff;
+    }
+
+    .pro-emblem {
+      background: rgba(52, 68, 212, 0.08);
+      border-color: rgba(52, 68, 212, 0.12);
+    }
+
+    .benefit-chip {
+      background: #fff;
+      border-color: var(--grey-200);
+    }
+
+    .benefit-chip:hover {
+      transform: none;
+      border-color: var(--grey-300);
+      box-shadow: none;
+    }
+
+    .benefit-chip::after {
+      display: none;
+    }
+
+    .benefit-chip-primary {
+      background: #EEF1FF;
+      border-color: rgba(52, 68, 212, 0.20);
+    }
+
+    .upgrade-btn {
+      box-shadow: none;
+    }
+
+    .view-plans-btn,
+    .close-btn,
+    .close-btn:hover {
+      background: #fff;
+    }
+
+    .workspace {
+      border: 1px solid var(--grey-200);
+    }
+
+    .chat {
+      border: 1px solid var(--grey-200);
+    }
+
   </style>
 </head>
 <body>
@@ -1462,8 +1521,8 @@
       <div class="workspace-switcher" aria-label="Switch workspace" title="My Label — Switch workspace">
         <div class="workspace-avatar">
           <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g filter="url(#filter-workspace-logo)">
-              <rect x="12" y="8" width="64" height="64" rx="16" fill="url(#paint-workspace-logo)"/>
+            <g>
+              <rect x="12" y="8" width="64" height="64" rx="16" fill="#FFFFFF"/>
               <rect x="13.5" y="9.5" width="61" height="61" rx="14.5" stroke="#E3E3E7" stroke-width="3"/>
             </g>
             <defs>
