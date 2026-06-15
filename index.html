@@ -306,7 +306,7 @@
       color: #3f3e45;
     }
 
-    .upgrade-benefits {
+    .-benefits {
       margin-left: 0;
       display: flex;
       align-items: center;
@@ -377,7 +377,7 @@
       color: currentColor;
     }
 
-    .upgrade-btn {
+    .-btn {
       height: 38px;
       padding: 0 14px;
       border: 0;
@@ -396,7 +396,7 @@
       gap: 8px;
     }
 
-    .upgrade-btn svg { width: 16px; height: 16px; }
+    .-btn svg { width: 16px; height: 16px; }
 
     .view-plans-btn {
       height: 38px;
@@ -436,7 +436,7 @@
     .close-btn svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 2; }
 
 
-    .upgrade-banner.is-collapsed {
+    .-banner.is-collapsed {
       min-height: 64px;
       grid-template-columns: auto minmax(360px, 1fr) auto auto;
       padding-top: 12px;
@@ -444,13 +444,13 @@
       align-items: center;
     }
 
-    .upgrade-banner.is-collapsed .banner-title,
-    .upgrade-banner.is-collapsed .banner-text-full,
-    .upgrade-banner.is-collapsed .upgrade-benefits {
+    .-banner.is-collapsed .banner-title,
+    .-banner.is-collapsed .banner-text-full,
+    .-banner.is-collapsed .-benefits {
       display: none;
     }
 
-    .upgrade-banner.is-collapsed .banner-copy {
+    .-banner.is-collapsed .banner-copy {
       flex-direction: row;
       align-items: center;
       gap: 12px;
@@ -749,7 +749,7 @@
       }
 
       .upgrade-btn {
-        grid-area: upgrade;
+        grid-area: Turn Pro;
       }
 
       .close-btn {
@@ -772,7 +772,7 @@
       }
 
       .upgrade-banner.is-collapsed .upgrade-btn {
-        grid-area: upgrade;
+        grid-area: Turn Pro;
       }
 
       .upgrade-banner.is-collapsed .banner-copy {
@@ -890,8 +890,8 @@
         grid-template-columns: 34px 1fr;
         grid-template-areas:
           "icon copy"
-          "benefits benefits"
-          "upgrade upgrade"
+          "benefits Turn Pro"
+          "Turn Pro Turn Pro"
           "plans plans";
         padding: 12px;
         gap: 10px;
@@ -1008,7 +1008,7 @@
         grid-template-areas:
           "icon copy"
           "benefits benefits"
-          "upgrade upgrade"
+          "Turn Pro Turn Pro"
           "plans plans";
       }
 
@@ -1707,7 +1707,7 @@
       reduceUpgradeBannerButton.setAttribute('aria-expanded', String(!isCollapsed));
       reduceUpgradeBannerButton.setAttribute(
         'aria-label',
-        isCollapsed ? 'Expand upgrade banner' : 'Reduce upgrade banner'
+        isCollapsed ? 'Expand upgrade banner' : 'Reduce  banner'
       );
     });
   </script>
