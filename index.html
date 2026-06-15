@@ -205,7 +205,7 @@
       overflow-x: hidden;
     }
 
-    .upgrade-banner {
+    .pro-awareness-banner {
       width: 100%;
       min-height: 112px;
       border-radius: 18px;
@@ -306,7 +306,7 @@
       color: #3f3e45;
     }
 
-    .-benefits {
+    .pro-benefits {
       margin-left: 0;
       display: flex;
       align-items: center;
@@ -377,7 +377,7 @@
       color: currentColor;
     }
 
-    .-btn {
+    .pro-cta {
       height: 38px;
       padding: 0 14px;
       border: 0;
@@ -396,7 +396,7 @@
       gap: 8px;
     }
 
-    .-btn svg { width: 16px; height: 16px; }
+    .pro-cta svg { width: 16px; height: 16px; }
 
     .view-plans-btn {
       height: 38px;
@@ -436,7 +436,7 @@
     .close-btn svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 2; }
 
 
-    .-banner.is-collapsed {
+    .pro-awareness-banner.is-collapsed {
       min-height: 64px;
       grid-template-columns: auto minmax(360px, 1fr) auto auto;
       padding-top: 12px;
@@ -444,30 +444,30 @@
       align-items: center;
     }
 
-    .-banner.is-collapsed .banner-title,
-    .-banner.is-collapsed .banner-text-full,
-    .-banner.is-collapsed .-benefits {
+    .pro-awareness-banner.is-collapsed .banner-title,
+    .pro-awareness-banner.is-collapsed .banner-text-full,
+    .pro-awareness-banner.is-collapsed .pro-benefits {
       display: none;
     }
 
-    .-banner.is-collapsed .banner-copy {
+    .pro-awareness-banner.is-collapsed .banner-copy {
       flex-direction: row;
       align-items: center;
       gap: 12px;
     }
 
-    .upgrade-banner.is-collapsed .banner-heading {
+    .pro-awareness-banner.is-collapsed .banner-heading {
       display: flex;
       margin: 0;
       flex: none;
       order: 2;
     }
 
-    .upgrade-banner.is-collapsed .free-limit-pill {
+    .pro-awareness-banner.is-collapsed .free-limit-pill {
       display: inline-flex;
     }
 
-    .upgrade-banner.is-collapsed .banner-text-collapsed {
+    .pro-awareness-banner.is-collapsed .banner-text-collapsed {
       display: block;
       max-width: none;
       font-weight: 650;
@@ -475,19 +475,19 @@
       order: 1;
     }
 
-    .upgrade-banner.is-collapsed .pro-emblem {
+    .pro-awareness-banner.is-collapsed .pro-emblem {
       width: 34px;
       min-width: 34px;
       height: 34px;
       min-height: 34px;
     }
 
-    .upgrade-banner.is-collapsed .pro-emblem > svg {
+    .pro-awareness-banner.is-collapsed .pro-emblem > svg {
       width: 19px;
       height: 19px;
     }
 
-    .upgrade-banner.is-collapsed .close-btn {
+    .pro-awareness-banner.is-collapsed .close-btn {
       transform: rotate(45deg);
     }
 
@@ -613,12 +613,12 @@
     .chat svg { width: 35px; height: 35px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
     @media (max-width: 1280px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: auto minmax(240px, 1fr) auto auto;
         align-items: center;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         flex-wrap: wrap;
         width: 100%;
       }
@@ -648,7 +648,7 @@
         overflow: visible;
       }
 
-      .upgrade-banner {
+      .pro-awareness-banner {
         position: relative;
         top: auto;
         min-height: auto;
@@ -656,7 +656,7 @@
         grid-template-areas:
           "icon copy"
           "benefits benefits"
-          "plans Turn Pro";
+          "plans pro";
         align-items: flex-start;
         gap: 12px;
         padding: 14px 14px 14px 14px;
@@ -707,7 +707,7 @@
         line-height: 1.35;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         grid-area: benefits;
         width: 100%;
         display: grid;
@@ -738,7 +738,7 @@
       }
 
       .view-plans-btn,
-      .upgrade-btn {
+      .pro-cta {
         width: 100%;
         height: 40px;
         font-size: 13px;
@@ -748,8 +748,8 @@
         grid-area: plans;
       }
 
-      .upgrade-btn {
-        grid-area: Turn Pro;
+      .pro-cta {
+        grid-area: pro;
       }
 
       .close-btn {
@@ -759,33 +759,33 @@
         height: 26px;
       }
 
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: 36px 1fr;
         grid-template-areas:
           "icon copy"
-          "plans upgrade";
+          "plans pro";
         padding-right: 14px;
       }
 
-      .upgrade-banner.is-collapsed .view-plans-btn {
+      .pro-awareness-banner.is-collapsed .view-plans-btn {
         grid-area: plans;
       }
 
-      .upgrade-banner.is-collapsed .upgrade-btn {
-        grid-area: Turn Pro;
+      .pro-awareness-banner.is-collapsed .pro-cta {
+        grid-area: pro;
       }
 
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner.is-collapsed .banner-copy {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
       }
 
-      .upgrade-banner.is-collapsed .banner-heading {
+      .pro-awareness-banner.is-collapsed .banner-heading {
         order: 2;
       }
 
-      .upgrade-banner.is-collapsed .banner-text-collapsed {
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
         order: 1;
       }
 
@@ -886,12 +886,12 @@
         padding: 10px;
       }
 
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 34px 1fr;
         grid-template-areas:
           "icon copy"
-          "benefits Turn Pro"
-          "Turn Pro Turn Pro"
+          "benefits benefits"
+          "pro pro"
           "plans plans";
         padding: 12px;
         gap: 10px;
@@ -916,7 +916,7 @@
         font-size: 12px;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         grid-template-columns: 1fr 1fr;
         gap: 7px;
       }
@@ -931,7 +931,7 @@
       }
 
       .view-plans-btn,
-      .upgrade-btn {
+      .pro-cta {
         height: 38px;
       }
 
@@ -959,131 +959,131 @@
       }
     }
 
-    /* Mobile responsive polish — upgrade banner */
+    /* Mobile responsive polish — pro banner */
     @media (max-width: 900px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         width: 100%;
         max-width: 100%;
         overflow: hidden;
       }
 
-      .upgrade-banner .close-btn {
+      .pro-awareness-banner .close-btn {
         z-index: 2;
       }
 
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner.is-collapsed {
         min-height: auto;
         grid-template-columns: 36px minmax(0, 1fr);
         grid-template-areas:
           "icon copy"
-          "plans upgrade";
+          "plans pro";
         gap: 10px 12px;
         align-items: center;
         padding: 12px 14px;
       }
 
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner.is-collapsed .banner-copy {
         min-width: 0;
         padding-right: 30px;
       }
 
-      .upgrade-banner.is-collapsed .banner-heading {
+      .pro-awareness-banner.is-collapsed .banner-heading {
         width: 100%;
       }
 
-      .upgrade-banner.is-collapsed .free-limit-pill {
+      .pro-awareness-banner.is-collapsed .free-limit-pill {
         max-width: 100%;
         height: 24px;
       }
 
-      .upgrade-banner.is-collapsed .banner-text-collapsed {
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
         font-size: 12.5px;
         line-height: 1.32;
       }
     }
 
     @media (max-width: 520px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 34px minmax(0, 1fr);
         grid-template-areas:
           "icon copy"
           "benefits benefits"
-          "Turn Pro Turn Pro"
+          "pro pro"
           "plans plans";
       }
 
-      .upgrade-banner .banner-copy {
+      .pro-awareness-banner .banner-copy {
         min-width: 0;
       }
 
-      .upgrade-banner .banner-heading {
+      .pro-awareness-banner .banner-heading {
         padding-right: 30px;
       }
 
-      .upgrade-banner .pill {
+      .pro-awareness-banner .pill {
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
       }
 
-      .upgrade-banner .upgrade-benefits {
+      .pro-awareness-banner .pro-benefits {
         grid-template-columns: 1fr;
       }
 
-      .upgrade-banner .benefit-chip {
+      .pro-awareness-banner .benefit-chip {
         justify-content: flex-start;
       }
 
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: 34px minmax(0, 1fr);
         grid-template-areas:
           "icon copy"
-          "upgrade upgrade"
+          "pro pro"
           "plans plans";
         gap: 9px 10px;
         padding: 12px;
       }
 
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner.is-collapsed .banner-copy {
         padding-right: 30px;
         gap: 7px;
       }
 
-      .upgrade-banner.is-collapsed .banner-heading {
+      .pro-awareness-banner.is-collapsed .banner-heading {
         padding-right: 0;
       }
 
-      .upgrade-banner.is-collapsed .banner-text-collapsed {
+      .pro-awareness-banner.is-collapsed .banner-text-collapsed {
         font-size: 12px;
         line-height: 1.35;
       }
 
-      .upgrade-banner.is-collapsed .view-plans-btn,
-      .upgrade-banner.is-collapsed .upgrade-btn {
+      .pro-awareness-banner.is-collapsed .view-plans-btn,
+      .pro-awareness-banner.is-collapsed .pro-cta {
         width: 100%;
       }
     }
 
     @media (max-width: 380px) {
-      .upgrade-banner,
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner,
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: 1fr;
         grid-template-areas:
           "copy"
-          "upgrade"
+          "pro"
           "plans";
       }
 
-      .upgrade-banner .pro-emblem {
+      .pro-awareness-banner .pro-emblem {
         display: none;
       }
 
-      .upgrade-banner .banner-heading,
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner .banner-heading,
+      .pro-awareness-banner.is-collapsed .banner-copy {
         padding-right: 32px;
       }
 
-      .upgrade-banner .upgrade-benefits {
+      .pro-awareness-banner .pro-benefits {
         grid-template-columns: 1fr;
       }
     }
@@ -1107,23 +1107,23 @@
     }
 
     @media (max-width: 1160px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: auto minmax(0, 1fr) auto auto;
         padding-right: 46px;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         flex-wrap: wrap;
       }
     }
 
     @media (max-width: 900px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 36px minmax(0, 1fr);
         grid-template-areas:
           "icon copy"
           "benefits benefits"
-          "upgrade plans";
+          "pro plans";
         align-items: start;
         gap: 12px;
         padding: 14px;
@@ -1142,7 +1142,7 @@
         line-height: 1.35;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         grid-area: benefits;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1166,8 +1166,8 @@
         white-space: nowrap;
       }
 
-      .upgrade-btn {
-        grid-area: upgrade;
+      .pro-cta {
+        grid-area: pro;
       }
 
       .view-plans-btn {
@@ -1176,12 +1176,12 @@
     }
 
     @media (max-width: 560px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 34px minmax(0, 1fr);
         grid-template-areas:
           "icon copy"
           "benefits benefits"
-          "upgrade upgrade"
+          "pro pro"
           "plans plans";
         padding: 12px;
         gap: 10px;
@@ -1221,7 +1221,7 @@
         line-height: 1.35;
       }
 
-      .upgrade-benefits {
+      .pro-benefits {
         grid-template-columns: 1fr;
         gap: 7px;
       }
@@ -1230,7 +1230,7 @@
         height: 36px;
       }
 
-      .upgrade-btn,
+      .pro-cta,
       .view-plans-btn {
         width: 100%;
         height: 40px;
@@ -1238,16 +1238,16 @@
     }
 
     @media (max-width: 380px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 1fr;
         grid-template-areas:
           "copy"
           "benefits"
-          "upgrade"
+          "pro"
           "plans";
       }
 
-      .upgrade-banner .pro-emblem {
+      .pro-awareness-banner .pro-emblem {
         display: none;
       }
 
@@ -1259,12 +1259,12 @@
   
 
     /* V5 — eye icon moved into title, no standalone emblem */
-    .upgrade-banner {
+    .pro-awareness-banner {
       grid-template-columns: minmax(420px, 1fr) auto auto;
       padding-left: 18px;
     }
 
-    .upgrade-banner .pro-emblem {
+    .pro-awareness-banner .pro-emblem {
       display: none !important;
     }
 
@@ -1284,71 +1284,71 @@
     }
 
     @media (max-width: 1280px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: minmax(240px, 1fr) auto auto;
       }
     }
 
     @media (max-width: 900px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
           "copy copy"
           "benefits benefits"
-          "plans upgrade";
+          "plans pro";
         padding: 14px;
       }
 
-      .upgrade-banner .banner-copy {
+      .pro-awareness-banner .banner-copy {
         grid-area: copy;
         padding-right: 30px;
       }
 
-      .upgrade-banner .banner-heading {
+      .pro-awareness-banner .banner-heading {
         padding-right: 0;
       }
 
-      .upgrade-banner .upgrade-benefits {
+      .pro-awareness-banner .pro-benefits {
         grid-area: benefits;
       }
 
-      .upgrade-banner .view-plans-btn {
+      .pro-awareness-banner .view-plans-btn {
         grid-area: plans;
       }
 
-      .upgrade-banner .upgrade-btn {
-        grid-area: upgrade;
+      .pro-awareness-banner .pro-cta {
+        grid-area: pro;
       }
 
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
           "copy copy"
-          "plans upgrade";
+          "plans pro";
         padding: 12px 14px;
       }
 
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner.is-collapsed .banner-copy {
         padding-right: 30px;
       }
     }
 
     @media (max-width: 520px) {
-      .upgrade-banner {
+      .pro-awareness-banner {
         grid-template-columns: 1fr;
         grid-template-areas:
           "copy"
           "benefits"
-          "upgrade"
+          "pro"
           "plans";
         padding: 12px;
       }
 
-      .upgrade-banner .banner-copy {
+      .pro-awareness-banner .banner-copy {
         padding-right: 30px;
       }
 
-      .upgrade-banner .banner-heading {
+      .pro-awareness-banner .banner-heading {
         align-items: flex-start;
       }
 
@@ -1362,24 +1362,24 @@
         margin-top: 0;
       }
 
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: 1fr;
         grid-template-areas:
           "copy"
-          "upgrade"
+          "pro"
           "plans";
         padding: 12px;
       }
     }
 
     @media (max-width: 380px) {
-      .upgrade-banner,
-      .upgrade-banner.is-collapsed {
+      .pro-awareness-banner,
+      .pro-awareness-banner.is-collapsed {
         grid-template-columns: 1fr;
       }
 
-      .upgrade-banner .banner-heading,
-      .upgrade-banner.is-collapsed .banner-copy {
+      .pro-awareness-banner .banner-heading,
+      .pro-awareness-banner.is-collapsed .banner-copy {
         padding-right: 30px;
       }
     }
@@ -1452,11 +1452,11 @@
 
 
     /* Design-system cleanup — flat surfaces, no decorative gradients or shadows */
-    .upgrade-banner,
+    .pro-awareness-banner,
     .pro-emblem,
     .benefit-chip,
     .benefit-chip-primary,
-    .upgrade-btn,
+    .pro-cta,
     .view-plans-btn,
     .add-btn,
     .pro-mini,
@@ -1465,7 +1465,7 @@
       box-shadow: none;
     }
 
-    .upgrade-banner {
+    .pro-awareness-banner {
       border-color: var(--grey-200);
       background: #fff;
     }
@@ -1495,7 +1495,7 @@
       border-color: rgba(52, 68, 212, 0.20);
     }
 
-    .upgrade-btn {
+    .pro-cta {
       box-shadow: none;
     }
 
@@ -1511,6 +1511,13 @@
 
     .chat {
       border: 1px solid var(--grey-200);
+    }
+
+  
+    /* CTA normalization — short Pro wording */
+    .pro-cta {
+      min-width: 104px;
+      justify-content: center;
     }
 
   </style>
@@ -1574,7 +1581,7 @@
     </aside>
 
     <main class="main">
-      <section class="upgrade-banner" id="upgradeBanner">
+      <section class="pro-awareness-banner" id="proAwarenessBanner">
         <div class="pro-emblem">
           <svg class="eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="currentColor"/>
@@ -1599,7 +1606,7 @@
             Get more storage, more seats, advanced tools, and make your music available to supervisors and buyers.
           </div>
 
-          <div class="upgrade-benefits" aria-label="Pro benefits">
+          <div class="pro-benefits" aria-label="Pro benefits">
             <div class="benefit-chip benefit-chip-primary">
               <div class="benefit-icon">
                 <svg class="eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1660,11 +1667,11 @@
         </div>
 
         <a class="view-plans-btn" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">View plans</a>
-        <a class="upgrade-btn" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">
+        <a class="pro-cta" href="https://clementsouchier-stack.github.io/pricing24/" target="_blank" rel="noopener noreferrer">
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip-pro-diamond-white-cta)"><path d="M5.26953 1.36719L6.35156 3.74805L8.18555 4.58203H15.7246L15.8096 4.58691C16.005 4.61152 16.1821 4.72048 16.293 4.88672L19.0273 8.98828C19.197 9.24307 19.1768 9.58007 18.9775 9.8125L10.7744 19.3828C10.6425 19.5365 10.4486 19.6238 10.2461 19.6211C10.0434 19.6181 9.85124 19.5256 9.72363 19.3682L1.97656 9.79785C1.80124 9.58124 1.77502 9.27883 1.91016 9.03516L3.0498 6.98438L3.19824 6.71484L0.945312 5.69141L0 5.26172L0.945312 4.83203L3.32715 3.74902L4.41016 1.36719L4.83984 0.421875L5.26953 1.36719ZM8.93555 9.35742L7.48242 10.0176L8.93555 10.6787L9.59668 12.1318L10.2568 10.6787L11.7109 10.0176L10.2568 9.35742L9.59668 7.9043L8.93555 9.35742ZM4.11426 4.30176L4.04102 4.46289L3.87988 4.53613L2.28125 5.26172L3.87988 5.98828L4.04102 6.06152L4.11426 6.22266L4.83984 7.82031L5.56641 6.22266L5.63965 6.06152L5.80078 5.98828L7.39844 5.26172L5.80078 4.53613L5.63965 4.46289L5.56641 4.30176L4.83984 2.70312L4.11426 4.30176Z" fill="white"/></g><defs><clipPath id="clip-pro-diamond-white-cta"><rect width="19.142" height="19.1993" fill="white" transform="translate(0 0.421875)"/></clipPath></defs></svg>
-          Upgrade
+          Turn Pro
         </a>
-        <button class="close-btn" type="button" aria-label="Reduce upgrade banner" aria-expanded="true" aria-controls="upgradeBanner">
+        <button class="close-btn" type="button" aria-label="Reduce pro banner" aria-expanded="true" aria-controls="proAwarenessBanner">
           <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </section>
@@ -1699,15 +1706,15 @@
   </div>
 
   <script>
-    const upgradeBanner = document.getElementById('upgradeBanner');
-    const reduceUpgradeBannerButton = upgradeBanner?.querySelector('.close-btn');
+    const proAwarenessBanner = document.getElementById('proAwarenessBanner');
+    const reduceTurn ProBannerButton = proAwarenessBanner?.querySelector('.close-btn');
 
-    reduceUpgradeBannerButton?.addEventListener('click', () => {
-      const isCollapsed = upgradeBanner.classList.toggle('is-collapsed');
-      reduceUpgradeBannerButton.setAttribute('aria-expanded', String(!isCollapsed));
-      reduceUpgradeBannerButton.setAttribute(
+    reduceTurn ProBannerButton?.addEventListener('click', () => {
+      const isCollapsed = proAwarenessBanner.classList.toggle('is-collapsed');
+      reduceTurn ProBannerButton.setAttribute('aria-expanded', String(!isCollapsed));
+      reduceTurn ProBannerButton.setAttribute(
         'aria-label',
-        isCollapsed ? 'Expand upgrade banner' : 'Reduce  banner'
+        isCollapsed ? 'Expand pro banner' : 'Reduce pro banner'
       );
     });
   </script>
