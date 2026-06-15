@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bridge.audio — Free Upgrade Banner</title>
+  <title>Bridge.audio — Pro Awareness Banner</title>
   <style>
     :root {
       --black: #252428;
@@ -210,8 +210,8 @@
       min-height: 112px;
       border-radius: 18px;
       border: 1px solid rgba(52, 68, 212, 0.18);
-      background: linear-gradient(135deg, #EEF1FF 0%, #F8F9FF 52%, #FFFFFF 100%);
-      box-shadow: 0 14px 38px rgba(37, 36, 40, 0.045);
+      background: #FFFFFF;
+      box-shadow: 0 14px 38px rgba(37, 36, 40, 0.06);
       display: grid;
       grid-template-columns: auto minmax(420px, 1fr) auto auto;
       align-items: center;
@@ -229,14 +229,16 @@
       height: 40px;
       min-height: 40px;
       border-radius: 50%;
-      background: var(--blue);
+      background: rgba(52, 68, 212, 0.10);
+      color: var(--blue);
+      border: 1px solid rgba(52, 68, 212, 0.16);
       display: grid;
       place-items: center;
       flex: none;
-      box-shadow: 0 10px 24px rgba(52, 68, 212, 0.20), inset 0 1px 0 rgba(255,255,255,0.20);
+      box-shadow: 0 10px 24px rgba(52, 68, 212, 0.08), inset 0 1px 0 rgba(255,255,255,0.72);
     }
 
-    .pro-emblem > svg { width: 20px; height: 20px; display: block; }
+    .pro-emblem > svg { width: 22px; height: 22px; display: block; }
     .banner-copy {
       min-width: 0;
       display: flex;
@@ -485,8 +487,8 @@
     }
 
     .upgrade-banner.is-collapsed .pro-emblem > svg {
-      width: 17px;
-      height: 17px;
+      width: 19px;
+      height: 19px;
     }
 
     .upgrade-banner.is-collapsed .close-btn {
@@ -1090,6 +1092,368 @@
       }
     }
 
+
+    /* Final polish — Bridge Pro awareness banner */
+    .benefit-chip-primary {
+      border-color: rgba(52, 68, 212, 0.30);
+      background: #EEF1FF;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 10px 26px rgba(52,68,212,0.12);
+    }
+
+    .benefit-chip-primary .benefit-icon {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .benefit-chip-primary .benefit-icon svg.eye-icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (max-width: 1160px) {
+      .upgrade-banner {
+        grid-template-columns: auto minmax(0, 1fr) auto auto;
+        padding-right: 46px;
+      }
+
+      .upgrade-benefits {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .upgrade-banner {
+        grid-template-columns: 36px minmax(0, 1fr);
+        grid-template-areas:
+          "icon copy"
+          "benefits benefits"
+          "upgrade plans";
+        align-items: start;
+        gap: 12px;
+        padding: 14px;
+      }
+
+      .banner-heading {
+        padding-right: 32px;
+      }
+
+      .banner-title {
+        font-size: 15px;
+      }
+
+      .banner-text {
+        font-size: 12.5px;
+        line-height: 1.35;
+      }
+
+      .upgrade-benefits {
+        grid-area: benefits;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 8px;
+      }
+
+      .benefit-chip-primary {
+        grid-column: 1 / -1;
+      }
+
+      .benefit-chip {
+        min-width: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .benefit-chip strong {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .upgrade-btn {
+        grid-area: upgrade;
+      }
+
+      .view-plans-btn {
+        grid-area: plans;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .upgrade-banner {
+        grid-template-columns: 34px minmax(0, 1fr);
+        grid-template-areas:
+          "icon copy"
+          "benefits benefits"
+          "upgrade upgrade"
+          "plans plans";
+        padding: 12px;
+        gap: 10px;
+        border-radius: 16px;
+      }
+
+      .pro-emblem {
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+        min-height: 34px;
+      }
+
+      .banner-copy {
+        gap: 7px;
+      }
+
+      .banner-heading {
+        gap: 7px;
+        padding-right: 30px;
+      }
+
+      .banner-title {
+        font-size: 14px;
+        line-height: 1.15;
+      }
+
+      .pill {
+        height: 23px;
+        max-width: 100%;
+        padding: 0 9px;
+        font-size: 10px;
+      }
+
+      .banner-text {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .upgrade-benefits {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .benefit-chip {
+        height: 36px;
+      }
+
+      .upgrade-btn,
+      .view-plans-btn {
+        width: 100%;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .upgrade-banner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "benefits"
+          "upgrade"
+          "plans";
+      }
+
+      .upgrade-banner .pro-emblem {
+        display: none;
+      }
+
+      .banner-heading {
+        padding-right: 32px;
+      }
+    }
+
+  
+
+    /* V5 — eye icon moved into title, no standalone emblem */
+    .upgrade-banner {
+      grid-template-columns: minmax(420px, 1fr) auto auto;
+      padding-left: 18px;
+    }
+
+    .upgrade-banner .pro-emblem {
+      display: none !important;
+    }
+
+    .banner-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .title-eye-icon {
+      width: 17px;
+      height: 17px;
+      display: block;
+      color: var(--blue);
+      flex: none;
+      transform: translateY(0.5px);
+    }
+
+    @media (max-width: 1280px) {
+      .upgrade-banner {
+        grid-template-columns: minmax(240px, 1fr) auto auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .upgrade-banner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+          "copy copy"
+          "benefits benefits"
+          "plans upgrade";
+        padding: 14px;
+      }
+
+      .upgrade-banner .banner-copy {
+        grid-area: copy;
+        padding-right: 30px;
+      }
+
+      .upgrade-banner .banner-heading {
+        padding-right: 0;
+      }
+
+      .upgrade-banner .upgrade-benefits {
+        grid-area: benefits;
+      }
+
+      .upgrade-banner .view-plans-btn {
+        grid-area: plans;
+      }
+
+      .upgrade-banner .upgrade-btn {
+        grid-area: upgrade;
+      }
+
+      .upgrade-banner.is-collapsed {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+          "copy copy"
+          "plans upgrade";
+        padding: 12px 14px;
+      }
+
+      .upgrade-banner.is-collapsed .banner-copy {
+        padding-right: 30px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .upgrade-banner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "benefits"
+          "upgrade"
+          "plans";
+        padding: 12px;
+      }
+
+      .upgrade-banner .banner-copy {
+        padding-right: 30px;
+      }
+
+      .upgrade-banner .banner-heading {
+        align-items: flex-start;
+      }
+
+      .banner-title {
+        font-size: 14px;
+      }
+
+      .title-eye-icon {
+        width: 16px;
+        height: 16px;
+        margin-top: 0;
+      }
+
+      .upgrade-banner.is-collapsed {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "upgrade"
+          "plans";
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .upgrade-banner,
+      .upgrade-banner.is-collapsed {
+        grid-template-columns: 1fr;
+      }
+
+      .upgrade-banner .banner-heading,
+      .upgrade-banner.is-collapsed .banner-copy {
+        padding-right: 30px;
+      }
+    }
+
+  
+
+    /* V6 — larger title eye and stronger heading hierarchy */
+    .banner-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .title-eye-icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      color: var(--blue);
+      flex: none;
+      transform: translateY(0.5px);
+    }
+
+    .banner-text {
+      max-width: 690px;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #3f3e45;
+    }
+
+    @media (max-width: 900px) {
+      .banner-title {
+        font-size: 15px;
+        line-height: 1.15;
+        gap: 7px;
+      }
+
+      .title-eye-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .banner-text {
+        font-size: 12.5px;
+        line-height: 1.35;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .banner-title {
+        font-size: 15px;
+        line-height: 1.15;
+        gap: 7px;
+      }
+
+      .title-eye-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .banner-text {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1153,27 +1517,41 @@
     <main class="main">
       <section class="upgrade-banner" id="upgradeBanner">
         <div class="pro-emblem">
-          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip-pro-diamond-white-banner)"><path d="M5.26953 1.36719L6.35156 3.74805L8.18555 4.58203H15.7246L15.8096 4.58691C16.005 4.61152 16.1821 4.72048 16.293 4.88672L19.0273 8.98828C19.197 9.24307 19.1768 9.58007 18.9775 9.8125L10.7744 19.3828C10.6425 19.5365 10.4486 19.6238 10.2461 19.6211C10.0434 19.6181 9.85124 19.5256 9.72363 19.3682L1.97656 9.79785C1.80124 9.58124 1.77502 9.27883 1.91016 9.03516L3.0498 6.98438L3.19824 6.71484L0.945312 5.69141L0 5.26172L0.945312 4.83203L3.32715 3.74902L4.41016 1.36719L4.83984 0.421875L5.26953 1.36719ZM8.93555 9.35742L7.48242 10.0176L8.93555 10.6787L9.59668 12.1318L10.2568 10.6787L11.7109 10.0176L10.2568 9.35742L9.59668 7.9043L8.93555 9.35742ZM4.11426 4.30176L4.04102 4.46289L3.87988 4.53613L2.28125 5.26172L3.87988 5.98828L4.04102 6.06152L4.11426 6.22266L4.83984 7.82031L5.56641 6.22266L5.63965 6.06152L5.80078 5.98828L7.39844 5.26172L5.80078 4.53613L5.63965 4.46289L5.56641 4.30176L4.83984 2.70312L4.11426 4.30176Z" fill="white"/></g><defs><clipPath id="clip-pro-diamond-white-banner"><rect width="19.142" height="19.1993" fill="white" transform="translate(0 0.421875)"/></clipPath></defs></svg>
+          <svg class="eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.32341 11.4467C2.81066 6.97571 7.02791 3.75 12.0005 3.75C16.9708 3.75 21.1864 6.97271 22.6755 11.4405C22.7959 11.8015 22.796 12.1922 22.6759 12.5533C21.1886 17.0243 16.9714 20.25 11.9988 20.25C7.02847 20.25 2.81284 17.0273 1.32374 12.5595C1.2034 12.1985 1.20328 11.8078 1.32341 11.4467ZM17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.1005 17.25 6.75 14.8995 6.75 12C6.75 9.1005 9.1005 6.75 12 6.75C14.8995 6.75 17.25 9.1005 17.25 12Z" fill="currentColor"/>
+          </svg>
         </div>
 
         <div class="banner-copy">
           <div class="banner-heading">
-            <div class="banner-title">Unlock more with Bridge Pro</div>
+            <div class="banner-title"><svg class="title-eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1.32341 11.4467C2.81066 6.97571 7.02791 3.75 12.0005 3.75C16.9708 3.75 21.1864 6.97271 22.6755 11.4405C22.7959 11.8015 22.796 12.1922 22.6759 12.5533C21.1886 17.0243 16.9714 20.25 11.9988 20.25C7.02847 20.25 2.81284 17.0273 1.32374 12.5595C1.2034 12.1985 1.20328 11.8078 1.32341 11.4467ZM17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.1005 17.25 6.75 14.8995 6.75 12C6.75 9.1005 9.1005 6.75 12 6.75C14.8995 6.75 17.25 9.1005 17.25 12Z" fill="currentColor"/></svg><span>Unlock more with Bridge Pro</span></div>
             <span class="pill free-limit-pill">
               <span class="pill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5"/></svg>
               </span>
-              Free plan limits active
+              You're currently on Free
             </span>
           </div>
           <div class="banner-text banner-text-full">
-            Upgrade to boost your workspace size, unlock advanced sharing and insights and get your music heard and licensed by supervisors, brands, ad agencies and much more — zero commission.
+            Get more storage, more seats, advanced tools, and make your music available to supervisors and buyers.
           </div>
           <div class="banner-text banner-text-collapsed">
-            Upgrade to boost your workspace, unlock features and get your music heard.
+            Get more storage, more seats, advanced tools, and make your music available to supervisors and buyers.
           </div>
 
           <div class="upgrade-benefits" aria-label="Pro benefits">
+            <div class="benefit-chip benefit-chip-primary">
+              <div class="benefit-icon">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.32341 11.4467C2.81066 6.97571 7.02791 3.75 12.0005 3.75C16.9708 3.75 21.1864 6.97271 22.6755 11.4405C22.7959 11.8015 22.796 12.1922 22.6759 12.5533C21.1886 17.0243 16.9714 20.25 11.9988 20.25C7.02847 20.25 2.81284 17.0273 1.32374 12.5595C1.2034 12.1985 1.20328 11.8078 1.32341 11.4467ZM17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.1005 17.25 6.75 14.8995 6.75 12C6.75 9.1005 9.1005 6.75 12 6.75C14.8995 6.75 17.25 9.1005 17.25 12Z" fill="currentColor"/>
+</svg>
+              </div>
+              <div>
+                <strong>Discovery Hub exposure</strong>
+              </div>
+            </div>
             <div class="benefit-chip">
               <div class="benefit-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1182,6 +1560,21 @@
               </div>
               <div>
                 <strong>Boost your workspace</strong>
+              </div>
+            </div>
+            <div class="benefit-chip">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.875 5.625C6.875 3.89911 8.27411 2.5 10 2.5C11.7259 2.5 13.125 3.89911 13.125 5.625C13.125 7.35089 11.7259 8.75 10 8.75C8.27411 8.75 6.875 7.35089 6.875 5.625Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.125 8.125C13.125 6.74429 14.2443 5.625 15.625 5.625C17.0057 5.625 18.125 6.74429 18.125 8.125C18.125 9.50571 17.0057 10.625 15.625 10.625C14.2443 10.625 13.125 9.50571 13.125 8.125Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.875 8.125C1.875 6.74429 2.99429 5.625 4.375 5.625C5.75571 5.625 6.875 6.74429 6.875 8.125C6.875 9.50571 5.75571 10.625 4.375 10.625C2.99429 10.625 1.875 9.50571 1.875 8.125Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.25822 12.5979C6.25653 11.037 8.00696 10 10 10C11.9933 10 13.7439 11.0373 14.7422 12.5985C15.4323 13.6779 15.7309 14.9793 15.5908 16.2483C15.5689 16.4466 15.4537 16.6225 15.2806 16.7218C13.7245 17.6147 11.9209 18.125 10 18.125C8.0791 18.125 6.27549 17.6147 4.71937 16.7218C4.54633 16.6225 4.43108 16.4466 4.40919 16.2483C4.26911 14.9791 4.56784 13.6774 5.25822 12.5979Z" fill="currentColor"/>
+<path d="M4.23524 11.8781C4.2252 11.8935 4.21523 11.9089 4.20531 11.9244C3.40076 13.1824 3.03257 14.6806 3.14559 16.1575C2.63889 16.0805 2.14725 15.9567 1.67536 15.7906L1.57956 15.7568C1.4048 15.6953 1.28269 15.5366 1.26799 15.3519L1.25994 15.2506C1.25335 15.1678 1.25 15.0842 1.25 15C1.25 13.3209 2.5742 11.9512 4.23524 11.8781Z" fill="currentColor"/>
+<path d="M16.8547 16.1575C16.9677 14.6808 16.5997 13.183 15.7954 11.9251C15.7854 11.9094 15.7753 11.8937 15.7651 11.8781C17.426 11.9513 18.75 13.321 18.75 15C18.75 15.0842 18.7467 15.1678 18.7401 15.2506L18.732 15.3519C18.7173 15.5366 18.5952 15.6953 18.4204 15.7568L18.3246 15.7906C17.8528 15.9567 17.3613 16.0805 16.8547 16.1575Z" fill="currentColor"/>
+</svg>
+              </div>
+              <div>
+                <strong>More seats included</strong>
               </div>
             </div>
             <div class="benefit-chip">
@@ -1202,17 +1595,6 @@
               </div>
               <div>
                 <strong>Advanced insights</strong>
-              </div>
-            </div>
-            <div class="benefit-chip">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M9.315 7.58365C12.1956 3.88296 16.6946 1.50021 21.75 1.5C21.9489 1.49999 22.1397 1.57901 22.2803 1.71966C22.421 1.86031 22.5 2.05108 22.5 2.25C22.5 7.30564 20.1173 11.805 16.4165 14.6859C16.4715 15.0329 16.5 15.3883 16.5 15.75C16.5 19.4779 13.4779 22.5 9.75 22.5C9.33579 22.5 9 22.1642 9 21.75V17.6185C8.99075 17.6118 8.98163 17.6049 8.97264 17.5978C8.02063 16.8429 7.15799 15.9803 6.40312 15.0282C6.39577 15.019 6.38866 15.0096 6.38179 15H2.25C1.83579 15 1.5 14.6642 1.5 14.25C1.5 10.5221 4.52208 7.5 8.25 7.5C8.61198 7.5 8.96772 7.52856 9.315 7.58365ZM15 6.75C13.7574 6.75 12.75 7.75736 12.75 9C12.75 10.2426 13.7574 11.25 15 11.25C16.2426 11.25 17.25 10.2426 17.25 9C17.25 7.75736 16.2426 6.75 15 6.75Z" fill="currentColor"/>
-<path d="M5.26036 17.2418C5.59237 16.9942 5.66074 16.5242 5.41306 16.1922C5.16539 15.8602 4.69546 15.7918 4.36345 16.0395C3.08209 16.9954 2.25 18.5256 2.25 20.2499C2.25 20.5255 2.27129 20.7966 2.31246 21.0615C2.36259 21.3842 2.61574 21.6373 2.93842 21.6875C3.20336 21.7286 3.47445 21.7499 3.75 21.7499C5.47434 21.7499 7.00452 20.9178 7.9604 19.6365C8.20808 19.3045 8.13971 18.8345 7.8077 18.5869C7.47569 18.3392 7.00576 18.4075 6.75809 18.7396C6.07313 19.6577 4.98081 20.2499 3.75 20.2499C3.75 19.0191 4.34218 17.9268 5.26036 17.2418Z" fill="currentColor"/>
-</svg>
-              </div>
-              <div>
-                <strong>Discovery Hub exposure</strong>
               </div>
             </div>
           </div>
